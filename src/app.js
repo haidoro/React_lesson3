@@ -6,7 +6,7 @@ export default class App extends React.Component{
 	render(){
 		return(
 			<div id="main">
-			<h1 className="title">{"Hello World!"}</h1>
+			<h1 className="title">{"Hello World!!"}</h1>
 			</div>
 			)
 	}
