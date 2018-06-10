@@ -41,7 +41,10 @@ webpack-dev-serverインストール
 ```
 yarn add webpack-dev-server --dev
 ```
-
+SASSの導入
+```
+yarn add node-sass style-loader css-loader sass-loader import-glob-loader extract-text-webpack-plugin
+```
 
 # webpack起動
 
