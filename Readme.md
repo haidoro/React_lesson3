@@ -45,7 +45,14 @@ SASSの導入
 ```
 yarn add node-sass style-loader css-loader sass-loader import-glob-loader extract-text-webpack-plugin
 ```
+## 問題点
 
+extract-text-webpack-pluginが原因っぽい。
+extract-text-webpack-pluginはWebpackのバージョンが4以上だとまだうまく作動しないみたい。
+
+```
+npm install -D extract-text-webpack-plugin@next
+```
 # webpack起動
 
 ```

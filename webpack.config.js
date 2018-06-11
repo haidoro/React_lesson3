@@ -1,7 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const publidDir = path.join(__dirname, '/public');
+const publidDir = path.join(__dirname, '/dist');
 module.exports = [
   {
     entry: [
@@ -10,7 +10,7 @@ module.exports = [
     output: {
       path: publidDir,
       publicPath: '/',
-      filename: 'bundle.js',
+      filename: 'app.js',
     },
     module: {
       rules: [{
@@ -24,14 +24,15 @@ module.exports = [
     resolve: {
       extensions: ['.js', '.jsx'],
     },
-    devServer: {
-      historyApiFallback: true,
-      contentBase: publidDir,
+     devServer:{
+      contentBase: './dist',
+      port: 8080,
+      inline: true
     },
   },
   {
     entry: {
-      style: './stylesheets/style.scss',
+      style: './sass/style.scss',
     },
     output: {
       path: publidDir,
