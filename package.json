@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "babel-loader": "^7.1.4",
     "css-loader": "^0.28.11",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "import-glob-loader": "^1.1.0",

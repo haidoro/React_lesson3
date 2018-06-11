@@ -51,7 +51,7 @@ extract-text-webpack-pluginが原因っぽい。
 extract-text-webpack-pluginはWebpackのバージョンが4以上だとまだうまく作動しないみたい。
 
 ```
-npm install -D extract-text-webpack-plugin@next
+yarn add extract-text-webpack-plugin@next
 ```
 # webpack起動
 
