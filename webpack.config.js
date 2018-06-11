@@ -1,31 +1,57 @@
-const webpack = require('webpack');
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const config = {
-  entry: './src/app.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'app.js'
+const publidDir = path.join(__dirname, '/public');
+module.exports = [
+  {
+    entry: [
+      './src/app.js',
+    ],
+    output: {
+      path: publidDir,
+      publicPath: '/',
+      filename: 'bundle.js',
+    },
+    module: {
+      rules: [{
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015'],
+        },
+      }],
+    },
+    resolve: {
+      extensions: ['.js', '.jsx'],
+    },
+    devServer: {
+      historyApiFallback: true,
+      contentBase: publidDir,
+    },
   },
-  devServer:{
-    contentBase: './dist',
-    port: 8080,
-    inline: true
+  {
+    entry: {
+      style: './stylesheets/style.scss',
+    },
+    output: {
+      path: publidDir,
+      publicPath: '/',
+      filename: 'bundle.css',
+    },
+    module: {
+      rules: [
+        {
+          test: /\.css$/,
+          loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' }),
+        },
+        {
+          test: /\.scss$/,
+          loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader!sass-loader' }),
+        },
+      ],
+    },
+    plugins: [
+      new ExtractTextPlugin('bundle.css'),
+    ],
   },
-  module: {
-    rules:[{
-      test: /\.js$/,
-      exclude: path.resolve(__dirname, 'node_modules'),
-      loader: 'babel-loader',
-      query:{
-        presets: ['react', 'es2015']
-      }
-    },{
-      test: /\.css$/,
-      exclude: path.resolve(__dirname, 'node_modules'),
-      loader: ["style-loader", "css-loader"]
-    }]
-  }
-};
-
-module.exports = config;
+];
