@@ -1,14 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class App extends React.Component
-{
-	render(){
-		return <h1>Hello Tahara</h1>;
-	}
-}
 
 ReactDOM.render(
-	<App />,
-	document.getElementById('app')
-)
+    <h1>Hello World もっとも単純に表示</h1>,
+    document.getElementById("app")
+) ;
+
+//React.DOM.h1(null,"Hello World")の記述は使えなくなっているので注意

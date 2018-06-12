@@ -43,14 +43,15 @@ yarn add webpack-dev-server --dev
 ```
 
 
-# webpack起動
+## webpack起動
 
 ```
 yarn build
 ```
 
+# TODO作成
 
-functionでコンポーネント作成
+## functionでコンポーネント作成
 ```
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -65,7 +66,7 @@ ReactDOM.render(
 )
 ```
 
-Classでコンポーネント作成
+## Classでコンポーネント作成
 ```
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -82,3 +83,23 @@ ReactDOM.render(
 	document.getElementById('app')
 )
 ```
+
+## propsでコンポーネントに値を渡す
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class App extends React.Component
+{
+	render(){
+		return <h1>Hello {this.props.name}</h1>;
+	}
+}
+
+ReactDOM.render(
+	<App name={"Kity"}/>,
+	document.getElementById('app')
+)
+
+```
+
