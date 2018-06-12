@@ -48,3 +48,37 @@ yarn add webpack-dev-server --dev
 ```
 yarn build
 ```
+
+
+functionでコンポーネント作成
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const App = (props)=>{
+	return <h1>Hello function</h1>;
+}
+
+ReactDOM.render(
+	<App />,
+	document.getElementById('app')
+)
+```
+
+Classでコンポーネント作成
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+class App extends React.Component
+{
+	render(){
+		return <h1>Hello Tahara</h1>;
+	}
+}
+
+ReactDOM.render(
+	<App />,
+	document.getElementById('app')
+)
+```
