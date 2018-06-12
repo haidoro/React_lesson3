@@ -1,10 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+class App extends React.Component
+{
+	constructor(){
+		super()
+		this.state ={
+			count: 0
+		}
+		this.onClickButton = this.onClickButton.bind(this)
+	}
+	onClickButton(){
+		let { count } = this.state
+		this.setState({count: count + 1})
+	}
+	render(){
+		return (
+			<div>
+				<h1>{`クリック回数 : ${this.state.count}`}</h1>
+				<button onClick={this.onClickButton}>click</button>
+			</div>
+		)
+	}
+}
 
 ReactDOM.render(
-    <h1>Hello World もっとも単純に表示</h1>,
-    document.getElementById("app")
-) ;
-
-//React.DOM.h1(null,"Hello World")の記述は使えなくなっているので注意
+	<App />,
+	document.getElementById('app')
+)
