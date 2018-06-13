@@ -23,6 +23,12 @@ class App extends React.Component
 				<h1>新しいタスク</h1>
 				<input type="text" onChange={e => this.setState({input: e.target.value})} value={this.state.input} />
 				<button onClick={this.addToDo}>click</button>
+				<h2>ToDo:</h2>
+				<ul>
+				{this.state.todos.map((todo)=>{
+					return <li key={todo}>{todo}</li>
+				})}
+				</ul>
 			</div>
 		)
 	}
