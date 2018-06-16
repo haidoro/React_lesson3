@@ -1,14 +1,18 @@
 {
   "name": "react_lesson2",
   "version": "1.0.0",
+  "homepage": " https://haidoro.github.io/React_lesson3/",
   "main": "app.js",
   "author": "Tahara",
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --open",
     "build": "webpack  --mode production",
-    "test":"jest"
+    "test": "jest",
+    "preghpages": "yarn build",
+    "ghpages": "gh-pages -d build"
   },
+  "homepage": "./",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
@@ -21,6 +25,7 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "gh-pages": "^1.2.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0"
   }
